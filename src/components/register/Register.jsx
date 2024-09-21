@@ -2,6 +2,7 @@ import React from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import 'animate.css';
+import { Link } from "react-router-dom";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -92,7 +93,12 @@ const Register = () => {
               <div className="form-control mt-6 animate__animated animate__slideInLeft animate__delay-5s">
                 <button className="btn btn-primary">Sign up</button>
               </div>
-              <div className="flex justify-end text-red-600 underline"> </div>
+              <div className="flex justify-end space-x-5"> 
+                <div>
+                    <h1 className="font-bold">Already user please???</h1>     
+                </div> 
+                <Link className="text-blue-700 underline font-bold" to="/login">Login</Link> 
+             </div>
             </form>
           </div>
         </div>

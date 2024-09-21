@@ -3,6 +3,7 @@ import React from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import 'animate.css';
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -15,9 +16,9 @@ const Login = () => {
               Login now!
             </h1>
           </div>
-          <div className="card flex w-full lg:w-[600px] lg:h-[600px] md:w-[600px] md:h-[600px] shadow-2xl bg-base-100 mt-10 animate__animated animate__slideInLeft animate__delay-2">
+          <div className="card flex w-full lg:w-[600px] md:h-[400px] lg:h-[400px] md:w-[600px] md:h-[600px] shadow-2xl bg-base-100 mt-10 animate__animated animate__slideInLeft animate__delay-2">
             <form className="card-body">
-              <div className="form-control animate__animated animate__slideInLeft animate__delay-5s">
+              <div className="form-control animate__animated animate__slideInLeft animate__delay-3s">
                 <label className="label">
                   <span className="label-text font-semibold text-[15px] md:text-[25px] mb-2">
                     Email
@@ -26,12 +27,12 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input input-bordered focus:ring focus:ring-red-500"
+                  className="input input-bordered focus:ring focus:ring-red-500 "
                   name="email"
                   required
                 />
               </div>
-              <div className="form-control relative animate__animated animate__slideInLeft animate__delay-5s ">
+              <div className="form-control relative animate__animated animate__slideInLeft animate__delay-4s ">
                 <label className="label">
                   <span className="label-text font-semibold mb-2 text-[15px] md:text-[25px] ">
                     Password
@@ -66,7 +67,12 @@ const Login = () => {
               <div className="form-control mt-6 animate__animated animate__slideInLeft animate__delay-5s">
                 <button className="btn btn-primary">Sign In</button>
               </div>
-              <div className="flex justify-end text-red-600 underline"> </div>
+              <div className="flex justify-end space-x-5"> 
+                <div>
+                    <h1 className="font-bold">New user please???</h1>     
+                </div> 
+                <Link className="text-blue-700 underline font-bold" to="/register">Register</Link> 
+             </div>
             </form>
           </div>
         </div>
