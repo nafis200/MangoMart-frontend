@@ -5,10 +5,10 @@ import Register from './components/register/Register';
 
 const App = () => {
   return (
-    <div>
-        <Register/>
-    </div>
-  );
-};
-
+    <>
+      <h1>Hellow head</h1>
+      
+    </>
+  )
+}
 export default App;
