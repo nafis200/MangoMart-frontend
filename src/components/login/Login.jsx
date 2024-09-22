@@ -1,13 +1,26 @@
-
-import React from "react";
+// import React from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import 'animate.css';
 
+// -------------
+import React, { useContext } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { FcGoogle } from "react-icons/fc";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+// import { AuthContext } from '../providers/AuthProvider';
+import useAuth from '../../hooks/useAuth';
+import { Button, Container, TextField } from '@mui/material';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+
+
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false);
-    return (
-        <div className="hero min-h-screen bg-base-200 bg-[url('https://i.postimg.cc/Y075n05X/1000-F-668433624-HGKul-Uw-Qjae-LV8-Xay-QYy6-F3-RCVQff-TGv.jpg')] animate__animated animate__slideInLeft animate__delay-1s">
+  const [showPassword, setShowPassword] = useState(false);
+  return (
+    <div className="hero min-h-screen bg-base-200 bg-[url('https://i.postimg.cc/Y075n05X/1000-F-668433624-HGKul-Uw-Qjae-LV8-Xay-QYy6-F3-RCVQff-TGv.jpg')] animate__animated animate__slideInLeft animate__delay-1s">
       <div className="hero-content flex-col">
         <div className="text-center">
           <div className="text-3xl md:text-5xl font-bold text-black my-3">
@@ -72,7 +85,8 @@ const Login = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Login;
+
