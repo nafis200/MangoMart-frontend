@@ -107,7 +107,7 @@ const Login = () => {
                             </div>
 
                             <button type="submit" className="btn bg-orange-400 hover:bg-orange-500 w-full">
-                                Login
+                                SignIn
                             </button>
                         </form>
 
