@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 // import Menu from '../../Menu/Menu/Menu';
 import { Link } from 'react-router-dom';
-// import { AuthContext } from '../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
+import { AuthContext } from '../../../providers/AuthProvider';
 // import useCart from '../../../hooks/useCart';
 // import useAdmin from '../../../hooks/useAdmin';
 
 const NavBar = () => {
-    // const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     // const [isAdmin] = useAdmin();
     // const [cart] = useCart() ;
     // console.log('cart-length',cart.length);
@@ -37,21 +37,22 @@ const NavBar = () => {
         <li className=''>
             <Link to="/dashboard/cart">
                 <button className='btn-sm flex gap-1 hover:text-yellow-300 hover:font-bold hover:text-[15px]'>
-                    <FaShoppingCart className=''/>
+                    <FaShoppingCart className='' />
                     {/* <div className='badge badge-secondary'>+{cart.length}</div> */}
                 </button>
             </Link>
         </li>
         {
-            // user ? <>
-            //     <span>{user?.displayName}</span> 
-            //      <button onClick={handleLogOut} className='btn btn-sm '>Log Out</button> 
-            //      <button className='btn btn-sm '>Log Out</button> 
-            // </> 
-            // :
-             <>
-                <li><Link to="/login">Login</Link></li>
+            user ? <>
+                <span>{user?.displayName}</span>
+                <button onClick={handleLogOut} className='btn btn-sm '>Log Out</button>
+                {/* <button className='btn btn-sm '>Log Out</button>  */}
             </>
+                :
+                <>
+                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/register">Register</Link></li>
+                </>
         }
     </>
 
